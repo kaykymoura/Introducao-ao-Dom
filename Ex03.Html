@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Compras</title>
+</head>
+<body>
+    <h1>Camisetas</h1>
+    <h3>Camiseta Preta - R$50 <button onclick="adicionar('Camiseta Preta', 50)">Adicionar</button></h3>
+    <h3>Camiseta Branca - R$40 <button onclick="adicionar('Camiseta Branca', 40)">Adicionar</button></h3>
+
+    <h3 id="total">Total: R$0</h3>
+    <h3>Carrinho:</h3>
+    <ul id="itensCarrinho"></ul>
+
+</body>
+<script>
+    let total = 0;
+
+    function adicionar(nome, valor) {
+        total += valor;
+        document.getElementById("total").textContent = "Total: R$" + total;
+
+        let li = document.createElement("li");
+        li.textContent = nome + " - R$" + valor;
+        document.getElementById("itensCarrinho").appendChild(li);
+    }
+</script>
+</html>
